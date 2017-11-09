@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    /* Changes the size of the iframe that displays the YouTube videos*/
+    #youtube_iframe {
+        display: block;
+        width: 100%;
+    }
+    /* Changes the color of the indicators */
+    #quote-carousel .carousel-indicators li {
+        background: #c0c0c0;
+    }
+    #quote-carousel .carousel-indicators .active {
+        background: #333333;
+    }
+    /* Remove awkward border from around youtube iframe panel*/
+    .panel-default {
+        border-color: #fff !important;
+    }
+</style>
+
+<div class="container">
+    @*Jumbotron*@
+    <div class="jumbotron">
+        <h1>Called to Serve</h1>
+        <p>You've received your call, but what's next?  Get answers from real returned missionaries as well as general information for missions across the world!</p>
+    </div>
+
+    <div class="row">
+        @*Youtube Videos*@
+        <div class="panel panel-default col-md-8" id="youtube_panel">
+            <div class="panel-body embed-responsive embed-responsive-16by9">
+                <iframe id="youtube_iframe"
+                        src="https://www.youtube.com/embed/NA2kXY7rOms" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="panel-footer" id="youtube-panel-footer">
+                <div class="dropdown" id="video_playlist">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        Need some more inspiration?
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="youtube_playlist hidden" value="NA2kXY7rOms"><a>I'll Go Where You Want Me to Go</a></li>
+                        <li class="youtube_playlist" value="8hMh6YYjPEU"><a>Praise to the Man</a></li>
+                        <li class="youtube_playlist" value="10DCinrTdnQ"><a>Hope of Israel</a></li>
+                        <li class="youtube_playlist" value="aSpr8XQNdxo"><a>Joseph Smith's First Prayer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @*Simple Carousel*@
+        <div id="quote-carousel" class="carousel slide col-md-4" data-ride="carousel" data-interval="4000">
+            <!-- Indicators -->
+            @*<ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>*@
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <blockquote>
+                        <img class="img-circle text-center" src="~/Content/Images/president_thomas_s_monson.jpg" style="width: 100px;height:100px;">
+                        <p>There are lives to brighten. There are hearts to touch. There are souls to save.</p>
+                        <small>President Thomas S. Monson</small>
+                    </blockquote>
+                </div>
+
+                <div class="item">
+                    <blockquote>
+                        <img class="img-circle" src="~/Content/Images/elder_d_todd_christofferson.jpg" style="width: 100px;height:100px;">
+                        <p>The work of our missionaries is a magnificant expression of the Lord's redeeming love.</p>
+                        <small>Elder D. Todd Christofferson</small>
+                    </blockquote>
+                </div>
+
+                <div class="item">
+                    <div class="item">
+                        <blockquote>
+                            <img class="img-circle" src="~/Content/Images/president_thomas_s_monson.jpg" style="width: 100px;height:100px;">
+                            <p>Now is the time for members and missionaries to come together, to work together, to labor in the Lord's vineyard to bring souls unto him.</p>
+                            <small>President Thomas S. Monson</small>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            @*Left and right controls*@
+            @*<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>*@
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //Set the interval for the carousel
+        $('#quote-carousel').carousel({
+            pause: true,
+            interval: 5000,
+        });
+    });
+
+    //Update YouTube video based on menu selection
+        $('.youtube_playlist').click(function (event) {
+            //Update iframe source with selected dropdown option value (contains YouTube video ID)
+            $('#youtube_iframe').attr('src', "https://www.youtube.com/embed/" + $(this).attr("value"));
+
+            $('.youtube_playlist').removeClass("hidden");
+            $('.youtube_playlist[value="' + $(this).attr("value") + '"]').addClass("hidden");
+        });
+</script>
