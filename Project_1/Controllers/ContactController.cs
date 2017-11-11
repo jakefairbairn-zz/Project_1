@@ -14,6 +14,10 @@ namespace Project_1.Controllers
             return View();
         }
 
-
+        [HttpPost]
+        public ActionResult SubmitContactForm(FormCollection form)
+        {
+            return View("Index");
+        }
     }
 }
