@@ -14,16 +14,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-2">
+        <div class="col-lg-1">
+            @*Spacer*@
         </div>
 
-        <div class="panel panel-default col-lg-6 col-md-6 col-sm-8">
+        <div class="panel panel-default col-lg-4 col-md-6 col-sm-5">
             <div class="panel-heading">
-                <h1>Contact Us</</h1>
+                <h2>Feeling formal?</</h2>
+                <h4>Fill this out and we'll get back to you quickly.</h4>
             </div>
-            @using (Html.BeginForm("SubmitContactForm", "Contact", FormMethod.Post))
-            {
-                <div class="panel-body">
+            <div class="panel-body">
+                @using (Html.BeginForm("SubmitContactForm", "Contact", FormMethod.Post))
+                {
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -45,7 +47,7 @@
                                  new SelectListItem{Text="Site Enhancement", Value="Site Enhancement" },
                                  new SelectListItem{Text="Other", Value="Other" } },
                                  "Select a menu option...",
-                                new { required = "required", @class = "form-control"})
+                                new { required = "required", @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
@@ -62,11 +64,38 @@
                             Clear <span class="glyphicon glyphicon-trash"></span>
                         </button>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-2">
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            @*Spacer*@
+        </div>
+            
+        <div class="panel panel-default col-lg-4 col-md-6 col-sm-5">
+            <div class="panel-heading">
+                <h2>Prefer something else?</</h2>
+                <h4>Don't worry, we've got you covered.</h4>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <fieldset>
+                        <legend>Phone</legend>
+                        1-800-641-1466 (1-800-MISSION)
+                    </fieldset>
+                </div>
+                <br />
+                <div>
+                    <fieldset>
+                        <legend>Email</legend>
+                        missionary_portal@gmail.com
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-1">
+            @*Spacer*@
         </div>
     </div>
 </div>
