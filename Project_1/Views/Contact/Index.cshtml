@@ -1,4 +1,5 @@
-﻿
+﻿@model Project_1.Models.ContactForm
+
 @{
     ViewBag.Title = "Index";
 }
@@ -20,36 +21,37 @@
             <div class="panel-heading">
                 <h1>Contact Us</</h1>
             </div>
-            <form method="post">
+            @using (Html.BeginForm("SubmitContactForm", "Contact", FormMethod.Post))
+            {
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="inputName" class="form-control" placeholder="Name" required />
+                            @Html.TextBoxFor(m => m.Name, new { required = "required", placeholder = "Name", @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input type="email" name="inputEmail" class="form-control" placeholder="Email" required />
+                            @Html.TextBoxFor(m => m.Email, new { required = "required", placeholder = "Email", @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
-                            <select class="form-control" required>
-                                <option selected hidden disabled value="">Select a menu option...</option>
-                                <option>General Inquiry</option>
-                                <option>Incident</option>
-                                <option>Site Enhancement</option>
-                                <option>Other</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.Type, new List<SelectListItem>
+                               { new SelectListItem{Text="General Inquiry", Value="General Inquiry"},
+                                 new SelectListItem{Text="Incident", Value="Incident" },
+                                 new SelectListItem{Text="Site Enhancement", Value="Site Enhancement" },
+                                 new SelectListItem{Text="Other", Value="Other" } },
+                                 "Select a menu option...",
+                                new { required = "required", @class = "form-control"})
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
-                            <textarea rows="4" class="form-control vresize" type="text" placeholder="Comment" required></textarea>
+                            @Html.TextAreaFor(m => m.Text, new { required = "required", rows = "4", placeholder = "Comment", @class = "form-control vresize" })
                         </div>
                     </div>
                     <div>
@@ -61,7 +63,7 @@
                         </button>
                     </div>
                 </div>
-            </form>
+            }
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-2">
