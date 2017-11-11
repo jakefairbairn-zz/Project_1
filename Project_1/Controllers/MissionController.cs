@@ -6,8 +6,9 @@ using System.Web.Mvc;
 
 namespace Project_1.Controllers
 {
-    public class HomeController : Controller
+    public class MissionController : Controller
     {
+        // GET: Mission
         public ActionResult Index()
         {
             return View();
