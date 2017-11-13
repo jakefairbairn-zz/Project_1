@@ -12,6 +12,6 @@ namespace Project_1.Models
         public string MissionAddress { get; set; }
         public string Climate { get; set; }
         public string DominateReligion { get; set; }
-        public string FlagImgFileLocation { get; set; }
+        public string FlagImgFileName { get; set; }
     }
 }

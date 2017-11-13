@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Project_1.Models;
 
 namespace Project_1.Controllers
 {
@@ -15,7 +16,7 @@ namespace Project_1.Controllers
         }
 
         [HttpPost]
-        public ActionResult SubmitMissionInfoForm(FormCollection form)
+        public ActionResult MissionInfo(FormCollection form)
         {
             int MissionID;
 
@@ -23,17 +24,35 @@ namespace Project_1.Controllers
 
             if(validMissionID)
             {
+                //Brazil Ribeirao Preto Mission
                 if (MissionID == 1)
                 {
-                    return View("BrazilRibeiraoPreto");
+                    ViewBag.MissionName = "Brazil Ribeirao Preto";
+                    ViewBag.MissionPresident = "Peter Siegfried Scholz";
+                    ViewBag.MissionAddress = "Rua Sao Sebastiao 1003, Centro, 14015-040 Ribeirao Preto, SP, Brazil";
+                    ViewBag.Climate = "Tropical Wet and Dry";
+                    ViewBag.DominateReligion = "Roman Catholic";
+                    ViewBag.FlagImgFileName = "";
                 }
+                //Raleigh North Carolina Mission
                 else if (MissionID == 2)
                 {
-                    return View("USANorthCarolinaRaleigh");
+                    ViewBag.MissionName = "Raleigh North Carolina";
+                    ViewBag.MissionPresident = "Dennis Roland James";
+                    ViewBag.MissionAddress = "5060 Six Forks Rd, Raleigh, NC 27609";
+                    ViewBag.Climate = "Humid Subtropical";
+                    ViewBag.DominateReligion = "Protestant Christian";
+                    ViewBag.FlagImgFileName = "";
                 }
+                //Japan Fukuoka Mission
                 else if (MissionID == 3)
                 {
-                    return View("JapanFukuoka");
+                    ViewBag.MissionName = "Japan Fukuoka";
+                    ViewBag.MissionPresident = "Bradley C Egan";
+                    ViewBag.MissionAddress = "9-16 Hirao-josuimachi, Chuo-ku, Fukuoka-shi, Fukuoka, 810-0029";
+                    ViewBag.Climate = "Humid Subtropical";
+                    ViewBag.DominateReligion = "Shinto and Buddhism";
+                    ViewBag.FlagImgFileName = "";
                 }
                 return View("MissionInfo");
             }
