@@ -152,6 +152,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\MissionInfo.cs" />
+    <Compile Include="Models\MissionInfoForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

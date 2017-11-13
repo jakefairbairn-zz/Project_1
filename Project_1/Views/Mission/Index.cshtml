@@ -1,8 +1,25 @@
-﻿
+﻿@model Project_1.Models.MissionInfoForm
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Mission</h2>
 
-<%=Html.DropDownList("list",ViewData["list"] as SelectList) %>
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("SubmitMissionInfoForm", "Mission", FormMethod.Post))
+        {
+            @Html.DropDownListFor(m => m.MissionID, new List<SelectListItem>
+                               { new SelectListItem{ Text="Brazil - Ribeirao Preto", Value = "1" },
+                                new SelectListItem{ Text="USA - North Carolina - Raleigh", Value = "2" },
+                                new SelectListItem{ Text="Japan - Fukuoka", Value = "3" } },
+                                "Select a mission...",
+                                new { required = "required"})
+            <br /><br />
+            <button type="submit" class="btn btn-primary pull-left">
+                Send <span class="glyphicon glyphicon-send"></span>
+            </button>
+        }
+    </div>
+</div>
