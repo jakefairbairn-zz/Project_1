@@ -154,6 +154,7 @@
     <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\MissionInfo.cs" />
     <Compile Include="Models\MissionInfoForm.cs" />
+    <Compile Include="Models\QuestionForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
