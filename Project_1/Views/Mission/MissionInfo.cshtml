@@ -3,10 +3,34 @@
     ViewBag.Title = "MissionInfo";
 }
 
-<h2>@ViewBag.MissionName</h2>
+<style>
+    h4 {
+        font-weight: bold;
+    }
+    #country_flag {
+        width: 380px;
+        height: 200px;
+    }
+</style>
 
-<p><b>Mission President: </b>@ViewBag.MissionPresident</p>
-<p><b>Mission Address: </b>@ViewBag.MissionAddress</p>
-<p><b>Climate: </b>@ViewBag.Climate</p>
-<p><b>Dominate Religion: </b>@ViewBag.DominateReligion</p>
-<p><b>Image File: </b>@ViewBag.FlagImgFileName</p>
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.MissionName</h2>
+
+        <p><b>Mission President: </b>@ViewBag.MissionPresident</p>
+        <p><b>Mission Address: </b>@ViewBag.MissionAddress</p>
+        <p><b>Climate: </b>@ViewBag.Climate</p>
+        <p><b>Dominate Religion: </b>@ViewBag.DominateReligion</p>
+        <p><b>Country Flag: </b><br /><img id="country_flag" src="~/Content/Images/MissionImages/@ViewBag.FlagImgFileName" /></p>
+
+    </div>
+    <div class="row">
+        <h2>Frequently Asked Questions</h2>
+        <h4>How are missionaries called?</h4>
+        <p>Every missionary who is called and assigned or reassigned to a particular mission is called by revelation through the Lord's servants, the prophets. A member of the Quorum of the Twelve assigns prospective missionaries to one of more than three hundred missions of the Church. Learn more by reading “The Divine Call of a Missionary,” Elder Ronald A. Rasband's April 2010 general conference address. </p>
+        <h4>How long does it take to receive my call?</h4>
+        <p>Generally, you may receive your call between two to three weeks once your papers are submitted by your stake president and processed by the Missionary Department. Bishops and stake presidents can view the status of each recommendation online.</p>
+        <h4>How can I best prepare emotionally to be a missionary?</h4>
+        <p>Elder L. Tom Perry explained: “Missionary service is emotionally demanding. Your support system is going to be withdrawn from you as you leave home and go out into the world. … There will be days of rejection and disappointment. Learn now about your emotional limits, and learn how to control your emotions under the circumstances you will face as a missionary.”</p>
+    </div>
+</div>

@@ -162,6 +162,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\elder_d_todd_christofferson.jpg" />
+    <Content Include="Content\Images\MissionImages\Brazil_Flag.png" />
+    <Content Include="Content\Images\MissionImages\Japan_Flag.png" />
+    <Content Include="Content\Images\MissionImages\USA_Flag.png" />
     <Content Include="Content\Images\president_thomas_s_monson.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
