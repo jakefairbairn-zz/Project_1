@@ -18,11 +18,13 @@ namespace Project_1.Controllers
         [HttpPost]
         public ActionResult MissionInfo(FormCollection form)
         {
+            //Variable for mission ID
             int MissionID;
-
+            //Determines if mission ID is a valid number
             bool validMissionID = Int32.TryParse(form["MissionID"], out MissionID);
 
-            if(validMissionID)
+            //Set ViewBag data if the MissionID is a valid number
+            if(validMissionID && (MissionID == 1 || MissionID == 2 || MissionID == 3))
             {
                 //Brazil Ribeirao Preto Mission
                 if (MissionID == 1)
@@ -32,7 +34,7 @@ namespace Project_1.Controllers
                     ViewBag.MissionAddress = "Rua Sao Sebastiao 1003, Centro, 14015-040 Ribeirao Preto, SP, Brazil";
                     ViewBag.Climate = "Tropical Wet and Dry";
                     ViewBag.DominateReligion = "Roman Catholic";
-                    ViewBag.FlagImgFileName = "";
+                    ViewBag.FlagImgFileName = "Brazil_Flag.png";
                 }
                 //Raleigh North Carolina Mission
                 else if (MissionID == 2)
@@ -42,7 +44,7 @@ namespace Project_1.Controllers
                     ViewBag.MissionAddress = "5060 Six Forks Rd, Raleigh, NC 27609";
                     ViewBag.Climate = "Humid Subtropical";
                     ViewBag.DominateReligion = "Protestant Christian";
-                    ViewBag.FlagImgFileName = "";
+                    ViewBag.FlagImgFileName = "USA_Flag.png";
                 }
                 //Japan Fukuoka Mission
                 else if (MissionID == 3)
@@ -52,12 +54,14 @@ namespace Project_1.Controllers
                     ViewBag.MissionAddress = "9-16 Hirao-josuimachi, Chuo-ku, Fukuoka-shi, Fukuoka, 810-0029";
                     ViewBag.Climate = "Humid Subtropical";
                     ViewBag.DominateReligion = "Shinto and Buddhism";
-                    ViewBag.FlagImgFileName = "";
+                    ViewBag.FlagImgFileName = "Japan_Flag.png";
                 }
+                //Return view with ViewBag data
                 return View("MissionInfo");
             }
             else
             {
+                //Return string stating there was an error
                 return Content("Error finding data for mission ID " + form["MissionID"]);
             }
             
