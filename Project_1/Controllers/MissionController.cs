@@ -32,6 +32,7 @@ namespace Project_1.Controllers
                     ViewBag.MissionName = "Brazil Ribeirao Preto";
                     ViewBag.MissionPresident = "Peter Siegfried Scholz";
                     ViewBag.MissionAddress = "Rua Sao Sebastiao 1003, Centro, 14015-040 Ribeirao Preto, SP, Brazil";
+                    ViewBag.Language = "Portuguese";
                     ViewBag.Climate = "Tropical Wet and Dry";
                     ViewBag.DominateReligion = "Roman Catholic";
                     ViewBag.FlagImgFileName = "Brazil_Flag.png";
@@ -42,6 +43,7 @@ namespace Project_1.Controllers
                     ViewBag.MissionName = "Raleigh North Carolina";
                     ViewBag.MissionPresident = "Dennis Roland James";
                     ViewBag.MissionAddress = "5060 Six Forks Rd, Raleigh, NC 27609";
+                    ViewBag.Language = "English";
                     ViewBag.Climate = "Humid Subtropical";
                     ViewBag.DominateReligion = "Protestant Christian";
                     ViewBag.FlagImgFileName = "USA_Flag.png";
@@ -52,6 +54,7 @@ namespace Project_1.Controllers
                     ViewBag.MissionName = "Japan Fukuoka";
                     ViewBag.MissionPresident = "Bradley C Egan";
                     ViewBag.MissionAddress = "9-16 Hirao-josuimachi, Chuo-ku, Fukuoka-shi, Fukuoka, 810-0029";
+                    ViewBag.Language = "Japanese";
                     ViewBag.Climate = "Humid Subtropical";
                     ViewBag.DominateReligion = "Shinto and Buddhism";
                     ViewBag.FlagImgFileName = "Japan_Flag.png";
