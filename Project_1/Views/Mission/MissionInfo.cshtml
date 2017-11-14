@@ -13,6 +13,12 @@
     }
 </style>
 
+<nav class="breadcrumb">
+    @Html.ActionLink("Mission", "Index", "Mission", new { @class="breadcrumb-item" }) > 
+    @ViewBag.MissionName
+
+</nav>
+
 <div class="container">
     <div class="row">
         <div class="panel panel-default">
