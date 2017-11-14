@@ -49,8 +49,11 @@
 </html>
 
 <script>
+    //mark the currently displayed page's nav bar link as active
     $(document).ready(function () {
+        //get the url of the page
         var url = window.location;
+        //add the 'active' class to the href that matches the url
         $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
         $('ul.nav a').filter(function() {
              return this.href == url;

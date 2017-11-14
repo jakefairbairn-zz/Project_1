@@ -8,10 +8,12 @@
     h4 {
         font-weight: bold;
     }
+    /*set the size of the country flag*/
     #country_flag {
         width: 380px;
         height: 200px;
     }
+    /*prevents text areas from resizing horizontally or becoming too small vertically*/ 
     .vresize {
         line-height: 1.5em;
         min-height: 4.5em;
@@ -19,6 +21,7 @@
     }
 </style>
 
+@*Generate breadcrumb for the page*@
 <nav class="breadcrumb">
     @Html.ActionLink("Mission", "Index", "Mission", new { @class="breadcrumb-item" }) > 
     @ViewBag.MissionName
@@ -30,6 +33,7 @@
             <div class="panel-heading">
                 <h2>@ViewBag.MissionName</h2>
             </div>
+            @*Display ViewBag Data for the mission*@
             <div class="panel-body">
                 <p><b>Mission President: </b>@ViewBag.MissionPresident</p>
                 <p><b>Mission Address: </b>@ViewBag.MissionAddress</p>
@@ -40,17 +44,26 @@
             </div>
         </div>
     </div>
+    @*Panel displaying FAQ's*@
     <div class="row">
         <div class="panel panel-default">
+            @*example question -> all FAQ's follow this template*@
+            @* panel heading *@
             <div class="panel-heading">
                 <h2>Frequently Asked Questions</h2>
             </div>
+            @* panel body *@
             <div class="panel-body">
+                @* display question *@
                 <h4>How are missionaries called?</h4>
+                @* display answer *@
                 <p>Every missionary who is called and assigned or reassigned to a particular mission is called by revelation through the Lord's servants, the prophets. A member of the Quorum of the Twelve assigns prospective missionaries to one of more than three hundred missions of the Church. Learn more by reading “The Divine Call of a Missionary,” Elder Ronald A. Rasband's April 2010 general conference address. </p>
+                @* HTML form to submit response to question *@
                 @using (Html.BeginForm("SubmitQuestionForm", "Mission", FormMethod.Post))
                 {
+                    //create text area
                     @Html.TextArea("Response", null, new { required = "required", rows = "2", placeholder = "Response", @class = "form-control vresize" })
+                    //create submit and clear buttons
                     <div style="margin-top: 5px;">
                         <button type="submit" class="btn btn-primary">
                             Reply <span class="glyphicon glyphicon-send"></span>
@@ -60,6 +73,7 @@
                         </button>
                     </div>
                 }<br /><br />
+                @*end of example question*@
                 <h4>How long does it take to receive my call?</h4>
                 <p>Generally, you may receive your call between two to three weeks once your papers are submitted by your stake president and processed by the Missionary Department. Bishops and stake presidents can view the status of each recommendation online.</p>
                 @using (Html.BeginForm("SubmitQuestionForm", "Mission", FormMethod.Post))
@@ -97,14 +111,17 @@
                 <h3>Ask Us a Question</</h3>
             </div>
             <div class="panel-body">
+                @*form for submitting new questions*@
                 @using (Html.BeginForm("SubmitQuestionForm", "Mission", FormMethod.Post))
                 {
+                    //create text area
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
                             @Html.TextAreaFor(m => m.Question, new { required = "required", rows = "4", placeholder = "Question", @class = "form-control vresize" })
                         </div>
                     </div>
+                    //create submit and clear buttons for form
                     <div>
                         <button type="submit" class="btn btn-primary pull-right">
                             Send <span class="glyphicon glyphicon-send"></span>

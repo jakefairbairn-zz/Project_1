@@ -8,15 +8,18 @@
 
 <div class="container">
     <div class="row">
+        
         @using (Html.BeginForm("MissionInfo", "Mission", FormMethod.Post))
         {
+            //create dropdown menu for possible missions to select
             @Html.DropDownListFor(m => m.MissionID, new List<SelectListItem>
                                { new SelectListItem{ Text="Brazil - Ribeirao Preto", Value = "1" },
                                 new SelectListItem{ Text="USA - North Carolina - Raleigh", Value = "2" },
                                 new SelectListItem{ Text="Japan - Fukuoka", Value = "3" } },
-                                "Select a mission...",
-                                new { required = "required"})
+                         "Select a mission...",
+                         new { required = "required" })
             <br /><br />
+            //create submit button; dropdown menu selection is required
             <button type="submit" class="btn btn-primary pull-left">
                 Go <span class="glyphicon glyphicon-send"></span>
             </button>

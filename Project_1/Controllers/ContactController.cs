@@ -17,6 +17,7 @@ namespace Project_1.Controllers
         [HttpPost]
         public ActionResult SubmitContactForm(FormCollection form)
         {
+            //return the user to the index view
             return View("Index");
         }
     }
