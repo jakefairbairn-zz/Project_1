@@ -51,21 +51,42 @@
                 @using (Html.BeginForm("SubmitQuestionForm", "Mission", FormMethod.Post))
                 {
                     @Html.TextArea("Response", null, new { required = "required", rows = "2", placeholder = "Response", @class = "form-control vresize" })
-                    <button type="submit" class="btn btn-primary pull-left">Reply</button>
+                    <div style="margin-top: 5px;">
+                        <button type="submit" class="btn btn-primary">
+                            Reply <span class="glyphicon glyphicon-send"></span>
+                        </button>
+                        <button type="reset" name="reset" value="Reset" class="btn btn-secondary">
+                            Clear <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
                 }<br /><br />
                 <h4>How long does it take to receive my call?</h4>
                 <p>Generally, you may receive your call between two to three weeks once your papers are submitted by your stake president and processed by the Missionary Department. Bishops and stake presidents can view the status of each recommendation online.</p>
                 @using (Html.BeginForm("SubmitQuestionForm", "Mission", FormMethod.Post))
                 {
                     @Html.TextArea("Response", null, new { required = "required", rows = "2", placeholder = "Response", @class = "form-control vresize" })
-                    <button type="submit" class="btn btn-primary pull-left">Reply</button>
+                    <div style="margin-top: 5px;">
+                        <button type="submit" class="btn btn-primary">
+                            Reply <span class="glyphicon glyphicon-send"></span>
+                        </button>
+                        <button type="reset" name="reset" value="Reset" class="btn btn-secondary">
+                            Clear <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
                 }<br /><br />
                 <h4>How can I best prepare emotionally to be a missionary?</h4>
                 <p>Elder L. Tom Perry explained: “Missionary service is emotionally demanding. Your support system is going to be withdrawn from you as you leave home and go out into the world. … There will be days of rejection and disappointment. Learn now about your emotional limits, and learn how to control your emotions under the circumstances you will face as a missionary.”</p>
                 @using (Html.BeginForm("SubmitQuestionForm", "Mission", FormMethod.Post))
                 {
                     @Html.TextArea("Response", null, new { required = "required", rows = "2", placeholder = "Response", @class = "form-control vresize" })
-                    <button type="submit" class="btn btn-primary pull-left">Reply</button>
+                    <div style="margin-top: 5px;">
+                        <button type="submit" class="btn btn-primary">
+                            Reply <span class="glyphicon glyphicon-send"></span>
+                        </button>
+                        <button type="reset" name="reset" value="Reset" class="btn btn-secondary">
+                            Clear <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
                 }<br /><br />
             </div>
         </div>
